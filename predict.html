@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f6f9;
+            color: #2c3e50;
+        }
+        .result {
+            font-size: 1.7rem;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            font-weight: 500;
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #3498db;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #2980b9;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <div class="result">
+        {% if pred %}
+            The predicted condition is: <strong>Diabetes</strong> - {{ pred }}<br>
+            Key Symptoms: Increased thirst, Fatigue, Blurred vision, Dizziness, High blood sugar.<br>
+            <a href="/">Return to Home</a>
+        {% else %}
+            No prediction is currently available. Please ensure the input is accurate.<br>
+            <a href="/">Return to Home</a>
+        {% endif %}
+    </div>
+</body>
+</html>

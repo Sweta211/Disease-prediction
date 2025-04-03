@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Prediction</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #e3f2fd;
+            color: #2c3e50;
+        }
+        input, button {
+            margin: 12px;
+            padding: 14px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 2px solid #bbb;
+            width: 300px;
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+        form {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Disease Prediction</h2>
+    <form action="/predict" method="POST">
+        {% for i in range(1, 6) %}
+            <input type="text" name="symptom{{ i }}" placeholder="Symptom {{ i }}" required><br>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
